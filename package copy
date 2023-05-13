@@ -28,6 +28,20 @@
     "upload",
     "util"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./node_modules/@picgo/bump-version/.cz-config.js"
+    }
+  },
   "commitlint": {
     "extends": [
       "./node_modules/@picgo/bump-version/commitlint-picgo"
