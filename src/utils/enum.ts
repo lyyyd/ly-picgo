@@ -22,7 +22,7 @@ export enum IBuildInEvent {
 }
 
 /**
- * these events will be catched only by links-core
+ * these events will be catched only by picgo
  */
 export enum IBusEvent {
   CONFIG_CHANGE = 'CONFIG_CHANGE'

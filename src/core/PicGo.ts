@@ -203,7 +203,7 @@ export class PicGo extends EventEmitter implements IPicGo {
         } else {
           this.once(IBuildInEvent.FAILED, () => {
             if (!shouldKeepAfterUploading) {
-              // 删除 links-core 生成的图片文件，例如 `~/.links-core/20200621205720.png`
+              // 删除 picgo 生成的图片文件，例如 `~/.picgo/20200621205720.png`
               fs.remove(imgPath).catch((e) => { this.log.error(e) })
             }
           })
