@@ -20,21 +20,21 @@ PicGo should be installed with node.js >= 12 (v1.5.0-alpha.4 and small) & node.j
 ### Global install
 
 ```bash
-npm install picgo -g
+npm install @lyland/picgo -g
 
 # or
 
-yarn global add picgo
+yarn global add @lyland/picgo
 ```
 
 ### Local install
 
 ```bash
-npm install picgo -D
+npm install @lyland/picgo -D
 
 # or
 
-yarn add picgo -D
+yarn add @lyland/picgo -D
 ```
 
 ## Usage
@@ -60,13 +60,13 @@ $ picgo -h
 
   Commands:
 
-    install|add <plugins...>             install picgo plugin
-    uninstall|rm <plugins...>            uninstall picgo plugin
-    update <plugins...>                  update picgo plugin
-    set|config <module> [name]           configure config of picgo modules
+    install|add <plugins...>             install @lyland/picgo plugin
+    uninstall|rm <plugins...>            uninstall @lyland/picgo plugin
+    update <plugins...>                  update @lyland/picgo plugin
+    set|config <module> [name]           configure config of @lyland/picgo modules
     upload|u [input...]                  upload, go go go
-    use [module]                         use modules of picgo
-    init [options] <template> [project]  create picgo plugin\'s development templates
+    use [module]                         use modules of @lyland/picgo
+    init [options] <template> [project]  create @lyland/picgo plugin\'s development templates
 ```
 
 #### Upload a picture from path
@@ -90,13 +90,13 @@ Thanks to [vs-picgo](https://github.com/Spades-S/vs-picgo) && [Spades-S](https:/
 #### Common JS
 
 ```js
-const { PicGo } = require('picgo')
+const { PicGo } = require('@lyland/picgo')
 ```
 
 #### ES Module
 
 ```js
-import { PicGo } from 'picgo'
+import { PicGo } from '@lyland/picgo'
 ```
 
 #### API usage example
