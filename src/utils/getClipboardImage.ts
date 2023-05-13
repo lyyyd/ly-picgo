@@ -1,3 +1,13 @@
+/*
+ * @Author: lyyyd David.Jackson.Lyd@gmail.com
+ * @Date: 2023-05-13 09:41:30
+ * @LastEditors: lyyyd David.Jackson.Lyd@gmail.com
+ * @LastEditTime: 2023-05-13 13:33:29
+ * @FilePath: \links-core\src\utils\getClipboardImage.ts
+ * @Description:
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
+ */
 import path from 'path'
 import { spawn } from 'child_process'
 import dayjs from 'dayjs'
@@ -64,7 +74,7 @@ function createImageFolder (ctx: IPicGo): void {
   }
 }
 
-// Thanks to vs-picgo: https://github.com/Spades-S/vs-picgo/blob/master/src/extension.ts
+// Thanks to vs-links-core: https://github.com/Spades-S/vs-links-core/blob/master/src/extension.ts
 const getClipboardImage = async (ctx: IPicGo): Promise<IClipboardImage> => {
   createImageFolder(ctx)
   // add an clipboard image folder to control the image cache file
@@ -90,7 +100,7 @@ const getClipboardImage = async (ctx: IPicGo): Promise<IClipboardImage> => {
         '-nologo',
         '-sta',
         '-executionpolicy', 'unrestricted',
-        // fix windows 10 native cmd crash bug when "picgo upload"
+        // fix windows 10 native cmd crash bug when "links-core upload"
         // https://github.com/PicGo/PicGo-Core/issues/32
         // '-windowstyle','hidden',
         // '-noexit',
@@ -106,9 +116,9 @@ const getClipboardImage = async (ctx: IPicGo): Promise<IClipboardImage> => {
         if (data.toString().trim() === 'no xclip or wl-clipboard') {
           ctx.emit(IBuildInEvent.NOTIFICATION, {
             title: 'xclip or wl-clipboard not found',
-            body: 'Please install xclip(for x11) or wl-clipboard(for wayland) before run picgo'
+            body: 'Please install xclip(for x11) or wl-clipboard(for wayland) before run links-core'
           })
-          return reject(new Error('Please install xclip(for x11) or wl-clipboard(for wayland) before run picgo'))
+          return reject(new Error('Please install xclip(for x11) or wl-clipboard(for wayland) before run links-core'))
         }
       }
       const imgPath = data.toString().trim()
@@ -119,7 +129,7 @@ const getClipboardImage = async (ctx: IPicGo): Promise<IClipboardImage> => {
 
       // in macOS if your copy the file in system, it's basename will not equal to our default basename
       if (path.basename(imgPath) !== path.basename(imagePath)) {
-        // if the path is not generate by picgo
+        // if the path is not generate by links-core
         // but the path exists, we should keep it
         if (fs.existsSync(imgPath)) {
           shouldKeepAfterUploading = true

@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/bin/picgo",
+      "program": "${workspaceFolder}/bin/links-core",
       "args": [
         "upload"
       ],

@@ -4,21 +4,21 @@ import { IRequestPromiseOptions } from './oldRequest'
 
 export interface IPicGo extends NodeJS.EventEmitter {
   /**
-   * picgo configPath
+   * links-core configPath
    *
    * if do not provide, then it will use default configPath
    */
   configPath: string
   /**
-   * the picgo configPath's baseDir
+   * the links-core configPath's baseDir
    */
   baseDir: string
   /**
-   * picgo logger factory
+   * links-core logger factory
    */
   log: ILogger
   /**
-   * picgo commander, for cli
+   * links-core commander, for cli
    */
   cmd: ICommander
   /**
@@ -30,11 +30,11 @@ export interface IPicGo extends NodeJS.EventEmitter {
    */
   input: any[]
   /**
-   * register\unregister\get picgo's plugin
+   * register\unregister\get links-core's plugin
    */
   pluginLoader: IPluginLoader
   /**
-   * install\uninstall\update picgo's plugin via npm
+   * install\uninstall\update links-core's plugin via npm
    */
   pluginHandler: IPluginHandler
   /**
@@ -50,11 +50,11 @@ export interface IPicGo extends NodeJS.EventEmitter {
    */
   helper: IHelper
   /**
-   * picgo-core version
+   * links-core-core version
    */
   VERSION: string
   /**
-   * electron picgo's version
+   * electron links-core's version
    */
   GUI_VERSION?: string
   /**
@@ -69,11 +69,11 @@ export interface IPicGo extends NodeJS.EventEmitter {
   i18n: II18nManager
 
   /**
-   * get picgo config
+   * get links-core config
    */
   getConfig: <T>(name?: string) => T
   /**
-   * save picgo config to configPath
+   * save links-core config to configPath
    */
   saveConfig: (config: IStringKeyMap<any>) => void
   /**
@@ -81,11 +81,11 @@ export interface IPicGo extends NodeJS.EventEmitter {
    */
   removeConfig: (key: string, propName: string) => void
   /**
-   * set picgo config to ctx && will not save to configPath
+   * set links-core config to ctx && will not save to configPath
    */
   setConfig: (config: IStringKeyMap<any>) => void
   /**
-   * unset picgo config to ctx && will not save to configPath
+   * unset links-core config to ctx && will not save to configPath
    */
   unsetConfig: (key: string, propName: string) => void
   /**
@@ -139,9 +139,9 @@ export interface IPluginLoader {
    *
    * if the second param (plugin) is provided
    *
-   * then picgo will register this plugin and enable it by default
+   * then links-core will register this plugin and enable it by default
    *
-   * but picgo won't write any config to config file
+   * but links-core won't write any config to config file
    *
    * you should use ctx.setConfig to change the config context
    */
@@ -442,7 +442,7 @@ export interface IPluginHandlerOptions {
 }
 
 /**
- * for picgo npm plugins
+ * for links-core npm plugins
  */
 export type IPicGoPlugin = (ctx: IPicGo) => IPicGoPluginInterface
 
@@ -467,12 +467,12 @@ export interface IPicGoPluginInterface {
    */
   transformer?: string
   /**
-   * for picgo gui plugins
+   * for links-core gui plugins
    */
   guiMenu?: (ctx: IPicGo) => IGuiMenuItem[]
 
   /**
-   * for picgo gui plugins
+   * for links-core gui plugins
    * short key -> command
    */
   commands?: (ctx: IPicGo) => ICommandItem[]
@@ -533,7 +533,7 @@ export interface IOptions {
 export interface IClipboardImage {
   imgPath: string
   /**
-   * if the path is generate by picgo -> false
+   * if the path is generate by links-core -> false
    * if the path is a real file path in system -> true
    */
   shouldKeepAfterUploading: boolean
