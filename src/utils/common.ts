@@ -52,7 +52,8 @@ export const getFSFile = async (filePath: string): Promise<IPathTransformedImgIn
       extname: path.extname(filePath),
       fileName: path.basename(filePath),
       buffer: await fs.readFile(filePath),
-      success: true
+      success: true,
+      filePath: filePath
     }
   } catch {
     return {

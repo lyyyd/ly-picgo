@@ -20,6 +20,7 @@ const handle = async (ctx: IPicGo): Promise<IPicGo> => {
       results[index] = {
         buffer: info.buffer,
         fileName: info.fileName,
+        filePath: info.filePath,
         width: imgSize.width,
         height: imgSize.height,
         extname: info.extname
