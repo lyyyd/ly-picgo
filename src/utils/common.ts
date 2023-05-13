@@ -123,8 +123,8 @@ export const getURLFile = async (url: string, ctx: IPicGo): Promise<IPathTransfo
 /**
  * detect the input string's type
  * for example
- * 1. @xxx/links-core-plugin-xxx -> scope
- * 2. links-core-plugin-xxx -> normal
+ * 1. @xxx/picgo-plugin-xxx -> scope
+ * 2. picgo-plugin-xxx -> normal
  * 3. xxx -> simple
  * 4. not exists or is a path -> unknown
  * @param name
@@ -144,7 +144,7 @@ export const getPluginNameType = (name: string): IPluginNameType => {
  * detect the input string is a simple plugin name or not
  * for example
  * 1. xxx -> true
- * 2. /Usr/xx/xxxx/links-core-plugin-xxx -> false
+ * 2. /Usr/xx/xxxx/picgo-plugin-xxx -> false
  * @param name pluginNameOrPath
  */
 export const isSimpleName = (nameOrPath: string): boolean => {
@@ -164,8 +164,8 @@ export const isSimpleName = (nameOrPath: string): boolean => {
 /**
  * streamline the full plugin name to a simple one
  * for example:
- * 1. links-core-plugin-xxx -> xxx
- * 2. @xxx/links-core-plugin-yyy -> yyy
+ * 1. picgo-plugin-xxx -> xxx
+ * 2. @xxx/picgo-plugin-yyy -> yyy
  * @param name pluginFullName
  */
 export const handleStreamlinePluginName = (name: string): string => {
@@ -179,8 +179,8 @@ export const handleStreamlinePluginName = (name: string): string => {
 /**
  * complete plugin name to full name
  * for example:
- * 1. xxx -> links-core-plugin-xxx
- * 2. links-core-plugin-xxx -> links-core-plugin-xxx
+ * 1. xxx -> picgo-plugin-xxx
+ * 2. picgo-plugin-xxx -> picgo-plugin-xxx
  * @param name pluginSimpleName
  * @param scope pluginScope
  */
@@ -195,11 +195,11 @@ export const handleCompletePluginName = (name: string, scope = ''): string => {
 /**
  * handle install/uninstall/update plugin name or path
  * for example
- * 1. links-core-plugin-xxx -> links-core-plugin-xxx
- * 2. @xxx/links-core-plugin-xxx -> @xxx/links-core-plugin-xxx
- * 3. xxx -> links-core-plugin-xxx
- * 4. ./xxxx/links-core-plugin-xxx -> /absolutePath/.../xxxx/links-core-plugin-xxx
- * 5. /absolutePath/.../links-core-plugin-xxx -> /absolutePath/.../links-core-plugin-xxx
+ * 1. picgo-plugin-xxx -> picgo-plugin-xxx
+ * 2. @xxx/picgo-plugin-xxx -> @xxx/picgo-plugin-xxx
+ * 3. xxx -> picgo-plugin-xxx
+ * 4. ./xxxx/picgo-plugin-xxx -> /absolutePath/.../xxxx/picgo-plugin-xxx
+ * 5. /absolutePath/.../picgo-plugin-xxx -> /absolutePath/.../picgo-plugin-xxx
  * @param nameOrPath pluginName or pluginPath
  */
 export const getProcessPluginName = (nameOrPath: string, logger: ILogger | Console = console): string => {
@@ -232,13 +232,13 @@ export const getProcessPluginName = (nameOrPath: string, logger: ILogger | Conso
 /**
  * get the normal plugin name
  * for example:
- * 1. links-core-plugin-xxx -> links-core-plugin-xxx
- * 2. @xxx/links-core-plugin-xxx -> @xxx/links-core-plugin-xxx
- * 3. ./xxxx/links-core-plugin-xxx -> links-core-plugin-xxx
- * 4. /absolutePath/.../links-core-plugin-xxx -> links-core-plugin-xxx
+ * 1. picgo-plugin-xxx -> picgo-plugin-xxx
+ * 2. @xxx/picgo-plugin-xxx -> @xxx/picgo-plugin-xxx
+ * 3. ./xxxx/picgo-plugin-xxx -> picgo-plugin-xxx
+ * 4. /absolutePath/.../picgo-plugin-xxx -> picgo-plugin-xxx
  * 5. an exception: [package.json's name] !== [folder name]
  * then use [package.json's name], usually match the scope package.
- * 6. if plugin name has version: links-core-plugin-xxx@x.x.x then remove the version
+ * 6. if plugin name has version: picgo-plugin-xxx@x.x.x then remove the version
  * @param nameOrPath
  */
 export const getNormalPluginName = (nameOrPath: string, logger: ILogger | Console = console): string => {
@@ -288,8 +288,8 @@ export const handleUnixStylePath = (pathStr: string): string => {
 
 /**
  * remove plugin version when register plugin name
- * 1. links-core-plugin-xxx@1.0.0 -> links-core-plugin-xxx
- * 2. @xxx/links-core-plugin-xxx@1.0.0 -> @xxx/links-core-plugin-xxx
+ * 1. picgo-plugin-xxx@1.0.0 -> picgo-plugin-xxx
+ * 2. @xxx/picgo-plugin-xxx@1.0.0 -> @xxx/picgo-plugin-xxx
  * @param nameOrPath
  * @param scope
  */

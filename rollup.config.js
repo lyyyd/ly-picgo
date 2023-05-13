@@ -9,8 +9,8 @@ import replace from '@rollup/plugin-replace'
 const version = process.env.VERSION || pkg.version
 const sourcemap = 'inline'
 const banner = `/*
- * links-core@${version}, https://github.com/lyyyd/links-core
- * (c) 2018-${new Date().getFullYear()} lyyyd
+ * picgo@${version}, https://github.com/PicGo/PicGo-Core
+ * (c) 2018-${new Date().getFullYear()} PicGo Group
  * Released under the MIT License.
  */`
 const input = './src/index.ts'

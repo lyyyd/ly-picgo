@@ -1,18 +1,18 @@
 {
-  "name": "links-core",
-  "version": "1.1.0",
+  "name": "@ly/picgo",
+  "version": "2.0.0",
   "description": "A tool for picture uploading",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "bin": {
-    "links-core": "./bin/links-core"
+    "picgo": "./bin/picgo"
   },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "start": "node ./bin/links-core",
+    "start": "node ./bin/picgo",
     "lint": "eslint src/**/*.ts && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production rimraf ./dist && rollup -c rollup.config.js",
@@ -28,6 +28,20 @@
     "upload",
     "util"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./node_modules/@picgo/bump-version/.cz-config.js"
+    }
+  },
   "commitlint": {
     "extends": [
       "./node_modules/@picgo/bump-version/commitlint-picgo"
@@ -107,7 +121,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lyyyd/links-core.git"
+    "url": "git+https://github.com/PicGo/PicGo-Core.git"
   },
   "picBed": {
     "current": "smms"
