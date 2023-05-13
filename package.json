@@ -1,6 +1,6 @@
 {
   "name": "@ly/picgo",
-  "version": "1.5.3",
+  "version": "2.0.0",
   "description": "A tool for picture uploading",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -17,9 +17,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production rimraf ./dist && rollup -c rollup.config.js",
     "dev": "cross-env NODE_ENV=development rollup -c rollup.config.js -w",
-    "patch": "npm version patch && git push origin master && git push origin --tags",
-    "minor": "npm version minor && git push origin master && git push origin --tags",
-    "major": "npm version major && git push origin master && git push origin --tags",
+    "patch": "npm version patch && git push origin main && git push origin --tags",
+    "minor": "npm version minor && git push origin main && git push origin --tags",
+    "major": "npm version major && git push origin main && git push origin --tags",
     "cz": "git-cz",
     "release": "bump-version"
   },
