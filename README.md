@@ -1,4 +1,4 @@
-# PicGo-Core
+# links-core
 
 ![standard](https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)
